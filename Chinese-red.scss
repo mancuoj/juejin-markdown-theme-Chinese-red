@@ -1,0 +1,283 @@
+$monospace-font: "JetBrains Mono", Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$baseColor: #f33b1f;          // 极光红
+$strongColor: #ee3f4d;        // 茶花红
+$darkBaseColor: #ac1f18;      // 覆盆子红
+$blockquoteColor: #f07c82;    // 香叶红
+$codeColor: #ee2746;          // 淡曙红
+$codeBgColor: #f9f1db;        // 蚌肉白
+$aColor: #1781b5;             // 釉蓝
+$bgColor: #fff9f9;
+
+.markdown-body {
+  word-break: break-word;
+  line-height: 2rem;
+  font-weight: 500;
+  font-size: 16px;
+  overflow-x: hidden;
+  color: black;
+
+
+  // 粗体
+  strong {
+    padding: 0.1em;
+    color: $strongColor;
+  }
+
+  // 斜体
+  em {
+    padding: 0 2px;
+    color: $baseColor;
+  }
+
+  // 标题
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.2;
+    margin: 2.4em auto 1.2em;
+    color: $darkBaseColor;
+
+    &::after {
+      content: '';
+      display: block;
+      margin: 0.2em auto 0;
+      width: 100px;
+      height: 2px;
+      border-bottom: 2px solid $baseColor;
+    }
+  }
+
+  h2 {
+    margin: 2em auto 1.4em;
+    line-height: 1.4;
+    font-size: 1.9em;
+    border-bottom: 1px solid $baseColor;
+
+    &::before {
+      content: '# ' !important;
+      color: $baseColor;
+    }
+  }
+
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.4;
+    margin: 1.6em auto 1.2em;
+    padding-left: 9px;
+    border-left: 6px solid $baseColor;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  h6 {
+    margin-top: 1rem;
+  }
+
+  // 图片
+  img {
+    max-width: 100%;
+  }
+
+  // 分割线
+  hr {
+    border-top: 1px solid #bbbbbb;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: 16px 0;
+  }
+
+  // 行间代码
+  code {
+    font-family: $monospace-font;
+
+    word-break: break-word;
+    overflow-x: auto;
+
+    background-color: $codeBgColor;
+    color: $codeColor;
+    border-radius: 2px;
+    font-size: 0.9em;
+    padding: 2px 4px;
+  }
+
+  // 代码框
+  pre {
+    font-family: $monospace-font;
+    overflow: auto;
+    position: relative;
+    line-height: 1.75;
+
+    > code {
+      border: 1px solid #888888;
+      margin: 1.2rem 0 !important;
+      border-radius: 3px;
+      font-size: 1.1rem;
+
+      padding: 16px 12px;
+      word-break: normal;
+      display: block;
+      overflow-x: auto;
+      color: #333;
+      background: #f6f6f6;
+    }
+  }
+
+  // 链接
+  a {
+    text-decoration: none;
+    color: $aColor;
+    padding: 0 2px;
+    border-bottom: 1px solid $aColor;
+
+    &:hover,
+    &:active {
+      border-bottom: 2px solid $baseColor;
+      color: $darkBaseColor;
+    }
+  }
+
+  // 引用
+  blockquote {
+    color: #3d3d3d;
+    background-color: $bgColor;
+    padding: 6px 15px;
+    margin: 20px 0;
+    border-left: 3px solid $blockquoteColor;
+
+    &::after {
+      display: block;
+      content: '';
+    }
+
+    & > p {
+      margin: 10px 0;
+    }
+  }
+
+  // 有序 & 无序列表
+  ol,
+  ul {
+    padding-left: 30px;
+
+    li {
+      margin-bottom: 6px;
+
+      & .task-list-item {
+        list-style: none;
+
+        ul,
+        ol {
+          margin-top: 6px;
+        }
+      }
+    }
+
+    ul,
+    ol {
+      margin-top: 6px;
+    }
+
+  }
+
+  ol li {
+    padding-left: 6px;
+  }
+
+  // 任务列表
+  .contains-task-list {
+    padding-left: 0;
+  }
+
+  .task-list-item {
+    list-style: none;
+
+    input {
+      margin-left: -1.2em;
+      margin-top: 0.5rem;
+    }
+
+    input:checked:before,
+    input[checked]:before {
+      content: '\2714'; // 对号
+      font-size: 0.5rem;
+      color: white;
+      border: 2px solid $baseColor;
+      background-color: $baseColor;
+      border-radius: 3px;
+    }
+  }
+
+  // 表格
+  table {
+    display: inline-block !important;
+    font-size: 1.1rem;
+    width: auto;
+    max-width: 100%;
+    overflow: auto;
+    // border: 1px solid $bgColor;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background: $bgColor;
+    color: black;
+    text-align: left;
+  }
+
+  tr:nth-child(2n) {
+    background-color: #fcfcfc;
+  }
+
+  tr:hover {
+    background-color: $bgColor;
+  }
+
+  th,
+  td {
+    padding: 12px 7px;
+    line-height: 24px;
+    border: 1px solid $codeBgColor;
+  }
+
+  td {
+    min-width: 120px;
+  }
+
+
+  @media (max-width: 720px) {
+    h1 {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
