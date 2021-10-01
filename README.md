@@ -1,6 +1,8 @@
 # juejin theme
 
-橘红色主题，中国红
+Chinese-red：中国红；朱红色；橘红色
+
+一个红色的掘金主题，庆祝2021年国庆！
 
 ## License
 

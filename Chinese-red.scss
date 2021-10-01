@@ -38,8 +38,8 @@ $bgColor: #fff9f9;
   h5,
   h6 {
     position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
 
     line-height: 1.4;
     font-weight: bold;
@@ -88,11 +88,11 @@ $bgColor: #fff9f9;
   }
 
   h5 {
-    font-size: 1.1rem;
+    font-size: 1em;
   }
 
   h6 {
-    margin-top: 1rem;
+    margin-top: 1em;
   }
 
   // 图片
@@ -119,7 +119,7 @@ $bgColor: #fff9f9;
     background-color: $codeBgColor;
     color: $codeColor;
     border-radius: 2px;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 2px 4px;
   }
 
@@ -132,7 +132,7 @@ $bgColor: #fff9f9;
 
     > code {
       border: 1px solid #888888;
-      margin: 1.2rem 0 !important;
+      margin: 1em 0 !important;
       border-radius: 3px;
       font-size: 1.1rem;
 
@@ -216,13 +216,13 @@ $bgColor: #fff9f9;
 
     input {
       margin-left: -1.2em;
-      margin-top: 0.5rem;
+      margin-top: 0.5em;
     }
 
     input:checked:before,
     input[checked]:before {
       content: '\2714'; // 对号
-      font-size: 0.5rem;
+      font-size: 0.5em;
       color: white;
       border: 2px solid $baseColor;
       background-color: $baseColor;
