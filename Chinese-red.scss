@@ -1,4 +1,4 @@
-$monospace-font: "JetBrains Mono", Menlo, Monaco, Consolas, 'Courier New', monospace;
+$monospace-font: -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
 
 $baseColor: #f33b1f;          // 极光红
 $strongColor: #ee3f4d;        // 茶花红
@@ -11,9 +11,9 @@ $bgColor: #fff9f9;
 
 .markdown-body {
   word-break: break-word;
-  line-height: 2rem;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  font-size: 15px;
   overflow-x: hidden;
   color: black;
 
@@ -50,7 +50,7 @@ $bgColor: #fff9f9;
     padding-bottom: 0.3em;
     font-size: 2.2em;
     line-height: 1.2;
-    margin: 2.4em auto 1.2em;
+    margin: 2em auto 1.4em;
     color: $darkBaseColor;
 
     &::after {
@@ -64,7 +64,7 @@ $bgColor: #fff9f9;
   }
 
   h2 {
-    margin: 2em auto 1.4em;
+    margin: 1.6em auto 1.2em;
     line-height: 1.4;
     font-size: 1.9em;
     border-bottom: 1px solid $baseColor;
@@ -134,7 +134,7 @@ $bgColor: #fff9f9;
       border: 1px solid #888888;
       margin: 1em 0 !important;
       border-radius: 3px;
-      font-size: 1.1rem;
+      font-size: 1rem;
 
       padding: 16px 12px;
       word-break: normal;
@@ -215,7 +215,6 @@ $bgColor: #fff9f9;
     list-style: none;
 
     input {
-      margin-left: -1.2em;
       margin-top: 0.5em;
     }
 
@@ -233,7 +232,7 @@ $bgColor: #fff9f9;
   // 表格
   table {
     display: inline-block !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: auto;
     max-width: 100%;
     overflow: auto;
