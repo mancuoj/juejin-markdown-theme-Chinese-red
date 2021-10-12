@@ -1,8 +1,12 @@
 $monospace-font: -apple-system,
-system-ui,
+-apple-system-body,
 BlinkMacSystemFont,
-Helvetica Neue,
+"Segoe UI",
+Helvetica,
+Arial,
 PingFang SC,
+"思源黑体 CN",
+"思源黑体",
 "JetBrains Mono",
 "Fira Code",
 Menlo,
@@ -31,7 +35,7 @@ $bgColor: #fff9f9;
 
   // 粗体
   strong {
-    padding: 0.1rem;
+    padding: 1px;
     color: $strongColor;
   }
 
@@ -49,25 +53,23 @@ $bgColor: #fff9f9;
   h5,
   h6 {
     position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
 
-    line-height: 1.4rem;
+    line-height: 1.5;
     font-weight: bold;
   }
 
   h1 {
     text-align: center;
-    padding-bottom: 0.3rem;
-    font-size: 2.2rem;
-    line-height: 1.2;
-    margin: 2rem auto 1.4rem;
+    padding-bottom: 5px;
+    font-size: 32px;
     color: $darkBaseColor;
 
     &::after {
       content: '';
       display: block;
-      margin: 0.2rem auto 0;
+      margin: 4px auto 0;
       width: 100px;
       height: 2px;
       border-bottom: 2px solid $baseColor;
@@ -75,9 +77,7 @@ $bgColor: #fff9f9;
   }
 
   h2 {
-    margin: 1.6rem auto 1.2rem;
-    line-height: 1.4;
-    font-size: 1.9rem;
+    font-size: 28px;
     border-bottom: 1px solid $baseColor;
 
     &::before {
@@ -87,15 +87,13 @@ $bgColor: #fff9f9;
   }
 
   h3 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin: 1.6rem auto 1.2rem;
+    font-size: 24px;
     padding-left: 9px;
     border-left: 6px solid $baseColor;
   }
 
   h4 {
-    font-size: 1.2rem;
+    font-size: 20px;
   }
 
   // 图片
@@ -122,8 +120,8 @@ $bgColor: #fff9f9;
     background-color: $codeBgColor;
     color: $codeColor;
     border-radius: 2px;
-    font-size: 1.2rem;
-    padding: 1px 3px;
+    font-size: 16px;
+    padding: 1px 2px;
   }
 
   // 代码框
@@ -134,16 +132,16 @@ $bgColor: #fff9f9;
     line-height: 1.75;
 
     >code {
-      margin: 1rem 0 !important;
+      margin: 12px 0 !important;
       border-radius: 3px;
-      font-size: 1.2rem;
+      font-size: 15px;
 
       padding: 16px 12px;
       word-break: normal;
       display: block;
       overflow-x: auto;
       color: #333;
-      background: #f6f6f6;
+      background: #f7f7f7;
     }
   }
 
@@ -165,8 +163,8 @@ $bgColor: #fff9f9;
   blockquote {
     color: #3d3d3d;
     background-color: $bgColor;
-    padding: 6px 15px;
-    margin: 20px 0;
+    padding: 6px 16px;
+    margin: 16px 0;
     border-left: 3px solid $blockquoteColor;
 
     &::after {
@@ -175,7 +173,7 @@ $bgColor: #fff9f9;
     }
 
     &>p {
-      margin: 10px 0;
+      margin: 6px 0;
     }
   }
 
@@ -208,6 +206,10 @@ $bgColor: #fff9f9;
     padding-left: 6px;
   }
 
+  ::marker {
+    color: $baseColor;
+  }
+
   // 任务列表
   .contains-task-list {
     padding-left: 0;
@@ -227,7 +229,7 @@ $bgColor: #fff9f9;
         right: 0;
         bottom: 0;
         background: white;
-        border: 1px solid $aColor;
+        border: 1px solid $blockquoteColor;
         border-radius: 3px;
         box-sizing: border-box;
         z-index: 1;
@@ -237,14 +239,14 @@ $bgColor: #fff9f9;
         &::after {
           content: "\2713";
           position: absolute;
-          top: -12px;
+          top: -5px;
           left: 0;
           right: 0;
           bottom: 0;
           width: 0;
           height: 0;
           color: $baseColor;
-          font-size: 20px;
+          font-size: 16px;
           font-weight: bold;
           z-index: 2;
         }
@@ -256,11 +258,10 @@ $bgColor: #fff9f9;
   // 表格
   table {
     display: inline-block !important;
-    font-size: 1rem;
+    font-size: 14px;
     width: auto;
     max-width: 100%;
     overflow: auto;
-    // border: 1px solid $bgColor;
 
     border-spacing: 0;
     border-collapse: collapse;
@@ -269,7 +270,7 @@ $bgColor: #fff9f9;
       background: $bgColor;
       color: black;
       text-align: left;
-      font-size: 1.2rem;
+      font-size: 15px;
     }
 
     tr:nth-child(2n) {
