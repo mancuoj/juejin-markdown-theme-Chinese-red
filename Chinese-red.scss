@@ -1,26 +1,37 @@
-$monospace-font: -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+$monospace-font: -apple-system,
+system-ui,
+BlinkMacSystemFont,
+Helvetica Neue,
+PingFang SC,
+"JetBrains Mono",
+"Fira Code",
+Menlo,
+"Ubuntu Mono",
+Consolas,
+sans-serif;
 
-$baseColor: #f33b1f;          // 极光红
-$strongColor: #ee3f4d;        // 茶花红
-$darkBaseColor: #ac1f18;      // 覆盆子红
-$blockquoteColor: #f07c82;    // 香叶红
-$codeColor: #ee2746;          // 淡曙红
-$codeBgColor: #f9f1db;        // 蚌肉白
-$aColor: #1781b5;             // 釉蓝
+$baseColor: #f33b1f;        // 极光红
+$strongColor: #ee3f4d;      // 茶花红
+$darkBaseColor: #ac1f18;    // 覆盆子红
+$blockquoteColor: #f07c82;  // 香叶红
+$codeColor: #ee2746;        // 淡曙红
+$codeBgColor: #f9f1db;      // 蚌肉白
+$aColor: #1781b5;           // 釉蓝
 $bgColor: #fff9f9;
+
 
 .markdown-body {
   word-break: break-word;
   font-weight: 400;
   line-height: 2;
-  font-size: 15px;
+  font-size: 17px;
   overflow-x: hidden;
   color: black;
 
 
   // 粗体
   strong {
-    padding: 0.1em;
+    padding: 0.1rem;
     color: $strongColor;
   }
 
@@ -38,25 +49,25 @@ $bgColor: #fff9f9;
   h5,
   h6 {
     position: relative;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-    line-height: 1.4;
+    line-height: 1.4rem;
     font-weight: bold;
   }
 
   h1 {
     text-align: center;
-    padding-bottom: 0.3em;
-    font-size: 2.2em;
+    padding-bottom: 0.3rem;
+    font-size: 2.2rem;
     line-height: 1.2;
-    margin: 2em auto 1.4em;
+    margin: 2rem auto 1.4rem;
     color: $darkBaseColor;
 
     &::after {
       content: '';
       display: block;
-      margin: 0.2em auto 0;
+      margin: 0.2rem auto 0;
       width: 100px;
       height: 2px;
       border-bottom: 2px solid $baseColor;
@@ -64,9 +75,9 @@ $bgColor: #fff9f9;
   }
 
   h2 {
-    margin: 1.6em auto 1.2em;
+    margin: 1.6rem auto 1.2rem;
     line-height: 1.4;
-    font-size: 1.9em;
+    font-size: 1.9rem;
     border-bottom: 1px solid $baseColor;
 
     &::before {
@@ -76,23 +87,15 @@ $bgColor: #fff9f9;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     line-height: 1.4;
-    margin: 1.6em auto 1.2em;
+    margin: 1.6rem auto 1.2rem;
     padding-left: 9px;
     border-left: 6px solid $baseColor;
   }
 
   h4 {
-    font-size: 1.2em;
-  }
-
-  h5 {
-    font-size: 1em;
-  }
-
-  h6 {
-    margin-top: 1em;
+    font-size: 1.2rem;
   }
 
   // 图片
@@ -119,8 +122,8 @@ $bgColor: #fff9f9;
     background-color: $codeBgColor;
     color: $codeColor;
     border-radius: 2px;
-    font-size: 1em;
-    padding: 2px 4px;
+    font-size: 1.2rem;
+    padding: 1px 3px;
   }
 
   // 代码框
@@ -130,11 +133,10 @@ $bgColor: #fff9f9;
     position: relative;
     line-height: 1.75;
 
-    > code {
-      border: 1px solid #888888;
-      margin: 1em 0 !important;
+    >code {
+      margin: 1rem 0 !important;
       border-radius: 3px;
-      font-size: 1rem;
+      font-size: 1.2rem;
 
       padding: 16px 12px;
       word-break: normal;
@@ -172,7 +174,7 @@ $bgColor: #fff9f9;
       content: '';
     }
 
-    & > p {
+    &>p {
       margin: 10px 0;
     }
   }
@@ -214,19 +216,41 @@ $bgColor: #fff9f9;
   .task-list-item {
     list-style: none;
 
-    input {
-      margin-top: 0.5em;
+    input[type="checkbox"] {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        border: 1px solid $aColor;
+        border-radius: 3px;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+
+      &:checked {
+        &::after {
+          content: "\2713";
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          color: $baseColor;
+          font-size: 20px;
+          font-weight: bold;
+          z-index: 2;
+        }
+      }
     }
 
-    input:checked:before,
-    input[checked]:before {
-      content: '\2714'; // 对号
-      font-size: 0.5em;
-      color: white;
-      border: 2px solid $baseColor;
-      background-color: $baseColor;
-      border-radius: 3px;
-    }
   }
 
   // 表格
@@ -240,41 +264,48 @@ $bgColor: #fff9f9;
 
     border-spacing: 0;
     border-collapse: collapse;
+
+    thead {
+      background: $bgColor;
+      color: black;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    tr:nth-child(2n) {
+      background-color: #fcfcfc;
+    }
+
+    tr:hover {
+      background-color: $bgColor;
+    }
+
+    th,
+    td {
+      padding: 12px 7px;
+      line-height: 24px;
+      border: 1px solid $codeBgColor;
+    }
+
+    td {
+      min-width: 120px;
+    }
+
   }
 
-  thead {
-    background: $bgColor;
-    color: black;
-    text-align: left;
-  }
 
-  tr:nth-child(2n) {
-    background-color: #fcfcfc;
-  }
 
-  tr:hover {
-    background-color: $bgColor;
-  }
-
-  th,
-  td {
-    padding: 12px 7px;
-    line-height: 24px;
-    border: 1px solid $codeBgColor;
-  }
-
-  td {
-    min-width: 120px;
-  }
 
 
   @media (max-width: 720px) {
     h1 {
       font-size: 24px;
     }
+
     h2 {
       font-size: 20px;
     }
+
     h3 {
       font-size: 18px;
     }
